@@ -25,6 +25,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    compile project(path: ':scancore')
+    compile project(path: ':zxing-library')
     compile 'pub.devrel:easypermissions:0.4.2'
 }

@@ -1,1 +1,1 @@
-include ':app', ':scancore'
+include ':app', ':zxing-library'
