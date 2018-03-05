@@ -1,7 +1,8 @@
 # ZXingLibrary
 二维码 条形码扫描工具
 ### 效果
-
+![image](https://github.com/CuiBow/ZXingLibrary/blob/master/example/default.png)
+![image](https://github.com/CuiBow/ZXingLibrary/blob/master/example/default2.png)
 ### 特点 
 
 可以完全自定义扫描框
