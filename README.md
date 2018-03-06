@@ -29,8 +29,11 @@ dependencies {
      
 } 
 ```
-
-3.普通模式使用默认扫描框
+3.在Application添加如下代码
+``` 
+ ZXingLibrary.init(this);
+``` 
+4.普通模式使用默认扫描框
 ``` 
         ScanFragment scanFragment =new ScanFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.scan_fragment, scanFragment).commit();
@@ -48,8 +51,8 @@ dependencies {
         //开启或关闭闪光灯
         scanFragment.setTorch(true/false);
    ```
-   
-4.使用自定义扫描框
+   
+5.使用自定义扫描框
 ```     
         //自定义扫描框需要继承BaseScanBox
         ScanFragment scanFragment =new ScanFragment();
