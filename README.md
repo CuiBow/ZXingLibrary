@@ -14,7 +14,7 @@ v1.1 | 添加条形/二维码扫码框、添加相册扫描二维码、添加页
 
 ### 使用方式
     
-#####1.0 在你的项目的 build.gradle 添加以下代码 Add it in your root build.gradle at the end of repositories:
+##### 1.0 在你的项目的 build.gradle 添加以下代码 Add it in your root build.gradle at the end of repositories:
 ```
 allprojects {
 
@@ -26,7 +26,7 @@ allprojects {
 ```
 
  
-#####2.0 在你的 Library 中添加如下代码
+##### 2.0 在你的 Library 中添加如下代码
 
 ``` 
 dependencies { 
@@ -35,11 +35,11 @@ dependencies {
      
 } 
 ```
-#####3.0 在Application添加如下代码
+##### 3.0 在Application添加如下代码
 ``` 
  ZXingLibrary.init(this);
 ``` 
-#####4.0 普通模式使用默认扫描框 
+##### 4.0 普通模式使用默认扫描框 
 * 扫描框分为两种
 * BarCodeView//条形码默认扫描框
 * QRCodeView//二维码默认扫描框
@@ -50,7 +50,7 @@ ScanFragment scanFragment =new ScanFragment();
 getSupportFragmentManager().beginTransaction().replace(R.id.scan_fragment, scanFragment).commit();   
 ```
    
-#####5.0 使用自定义扫描框
+##### 5.0 使用自定义扫描框
 ```     
 //自定义扫描框需要继承BaseScanBox
 ScanFragment scanFragment =new ScanFragment();
@@ -58,7 +58,7 @@ ScanFragment scanFragment =new ScanFragment();
 ScanUtil.setFragmentArgs(scanFragment, R.layout.fragment_my_scan);
 getSupportFragmentManager().beginTransaction().replace(R.id.scan_fragment, scanFragment).commit();   
 ```
-#####6.0 关于剩余功能以及用法
+##### 6.0 关于剩余功能以及用法
 * 跳转相册扫描二维码
 
 ```          
@@ -74,7 +74,7 @@ ScanFragment.scanAgain();
 ``` 
 ScanFragment.setTorch(true/false);//开启/关闭
 ```
-#####7.0 关于回调介绍
+##### 7.0 关于回调介绍
 * 关于扫描以及相册回调
 * 1.请实现ScanUtil.ScanCallback( )接口
 * 2.考虑到页面间传递code问题，请在成功的回调中调用 ScanResultRxFinal.get().onScanResult(mBitmap,result);
