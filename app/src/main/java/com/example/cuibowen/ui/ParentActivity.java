@@ -2,12 +2,15 @@ package com.example.cuibowen.ui;
 
 import android.Manifest;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.cuibowen.camera.R;
+import com.example.scancore.utils.ScanResultRxFinal;
 
 import java.util.List;
 
@@ -15,22 +18,28 @@ import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.AppSettingsDialog;
 import pub.devrel.easypermissions.EasyPermissions;
 
-public class ParentActivity extends BaseActivity {
+public class ParentActivity extends BaseActivity implements ScanResultRxFinal.RxScanResultListener{
+    private ImageView image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choice);
+        image=findViewById(R.id.image);
         initPermission();
+        initListener();
 
     }
     public void firstScan(View view){
         cameraTask(view.getId());
 
-
     }
     public void secondScan(View view){
         cameraTask(view.getId());
+    }
+
+    private void initListener(){
+        ScanResultRxFinal.get().init(this);
     }
 
     private void openActivity(Class<?> activity){
@@ -48,7 +57,11 @@ public class ParentActivity extends BaseActivity {
                 break;
         }
     }
-
+    @Override
+    public void onScanSuccessResult(Bitmap bitmap, String result) {
+        Toast.makeText(this,result,Toast.LENGTH_SHORT).show();
+        image.setImageBitmap(bitmap);
+    }
     /**
      * 请求CAMERA权限码
      */
@@ -74,6 +87,7 @@ public class ParentActivity extends BaseActivity {
     public void cameraTask(int viewId) {
         if (EasyPermissions.hasPermissions(this, Manifest.permission.CAMERA)) {
             // Have permission, do the thing!
+            image.setImageBitmap(null);
             switchActivity(viewId);
         } else {
             // Ask for one permission
@@ -100,4 +114,6 @@ public class ParentActivity extends BaseActivity {
                     .show();
         }
     }
+
+
 }

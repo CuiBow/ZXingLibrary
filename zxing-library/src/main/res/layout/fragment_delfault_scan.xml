@@ -10,7 +10,7 @@
         android:layout_gravity="center" />
 
 
-    <com.example.scancore.scanBoxView.ScanBoxView
+    <com.example.scancore.scanBoxView.QRCodeView
         android:id="@+id/viewfinder_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

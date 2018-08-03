@@ -28,7 +28,6 @@ import android.util.Log;
 import com.example.scancore.R;
 import com.example.scancore.camera.CameraManager;
 import com.example.scancore.scanBoxView.BaseScanBox;
-import com.example.scancore.scanBoxView.ScanBoxView;
 import com.example.scancore.ui.ScanFragment;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;

@@ -26,4 +26,6 @@ public abstract class BaseScanBox extends View {
 
     public abstract void closeDrawViewfinder();
 
+    public abstract void recycle();
+
 }

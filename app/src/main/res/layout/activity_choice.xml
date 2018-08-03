@@ -6,18 +6,16 @@
     android:layout_height="match_parent"
     tools:context="com.example.cuibowen.ui.ParentActivity">
 
-
     <Button
+        android:layout_marginTop="100dp"
         android:onClick="firstScan"
         android:id="@+id/one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="默认扫描ui"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.166"
         tools:ignore="OnClick" />
 
     <Button
@@ -26,11 +24,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="自定义ui"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/one"
-        app:layout_constraintVertical_bias="0.136"
         tools:ignore="OnClick" />
+
+
+    <ScrollView
+        app:layout_constraintTop_toBottomOf="@+id/two"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:fillViewport="true"
+        android:layout_width="0dp"
+        android:layout_height="0dp">
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <ImageView
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:id="@+id/image"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content" />
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
 
 </android.support.constraint.ConstraintLayout>
