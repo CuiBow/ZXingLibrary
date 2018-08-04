@@ -31,7 +31,7 @@ allprojects {
 ``` 
 dependencies { 
 
-	  compile 'com.github.CuiBow:ZXingLibrary:v1.1'
+	  implementation 'com.github.CuiBow:ZXingLibrary:v1.1'
      
 } 
 ```
